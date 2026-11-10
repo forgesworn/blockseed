@@ -1,0 +1,30 @@
+[package]
+name = "blockseed"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.71"
+description = "A daily random seed nobody picks: the first Bitcoin block of the UTC day, verified locally from its headers."
+license = "MIT"
+authors = ["ForgeSworn"]
+repository = "https://github.com/forgesworn/blockseed"
+readme = "README.md"
+keywords = ["bitcoin", "seed", "randomness", "daily", "esplora"]
+categories = ["cryptography"]
+
+[features]
+default = []
+# Blocking HTTPS fetch of the headers (mempool.space, cross-checked on
+# blockstream.info). Meant for a background thread.
+fetch = ["dep:ureq", "dep:serde_json"]
+
+[dependencies]
+sha2 = "0.10"
+serde_json = { version = "1", optional = true }
+# ureq 2.x speaks rustls with the bundled webpki roots. No native-tls, no openssl.
+ureq = { version = "2.12", default-features = false, features = ["tls"], optional = true }
+
+[[example]]
+name = "today"
+required-features = ["fetch"]
+
+[workspace]
