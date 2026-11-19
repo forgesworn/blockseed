@@ -1,0 +1,14 @@
+# blockseed
+
+> Rust implementation of a public daily seed derived from the first Bitcoin block of the UTC day.
+
+## Documentation
+
+- [Usage and assumptions](https://github.com/forgesworn/blockseed/blob/main/README.md): Verify headers locally, use the optional explorer fetcher or supply your own source.
+- [Derivation rule](https://github.com/forgesworn/blockseed/blob/main/docs/RULE.md): Date boundaries, verification and known answers.
+
+## ForgeSworn ecosystem
+
+- [ForgeSworn library guide](https://forgesworn.dev/llms.txt): Find related libraries, tools and integration guides by task and runtime.
+- [ForgeSworn on GitHub](https://github.com/forgesworn): Browse the organisation’s public repositories.
+- [Project source](https://github.com/forgesworn/blockseed): Canonical source repository, documentation and release information.
